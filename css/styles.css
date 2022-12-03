@@ -58,6 +58,22 @@
   
   
   /**=== Main Styles ===*/
+.progress{
+  width:30%;
+  margin:10px auto;
+  margin-bottom:25px;
+  border-radius:5px;
+  height:15px;
+  background-color:$bg2;
+  transition:100ms ease;
+}
+    
+.progress-bar{
+  border-radius:inherit;
+  width:10%;
+  height:100%;
+  background-color:#ff4500;
+}
   
   /*======================*/
   
