@@ -9,17 +9,19 @@ function getFetch () {
     .then((data) => {
 
       console.log(data);
-      const typeSelected = document.getElementById("type")
+      // const typeSelected = document.getElementById("type")
       // function selectType {
       //   const typeValue = typeSelected.options[typeSelected.selectedIndex].value
       //   const typeResult = typeSelected.options[typeSelected.selectedIndex].text
       //   document.querySelector('input').textContent = typeValue
 
       // }
-      document.getElementById("activity_name").innerText = data.activity;
-      document.getElementById("activity_type").innerText = data.type;
-      document.getElementById("activity_participants").innerText = data.participants;
-      document.getElementById("activity_price").innerText = data.price;
+      document.getElementById("activity-name").innerText = data.activity;
+      document.getElementById("activity-type").innerText = data.type;
+      document.getElementById("activity-participants").innerText = data.participants;
+      document.getElementById("activity-price").innerText = data.price;
+      document.getElementById("activity-accessibility").innerText = data.accessibility;
+      document.getElementById("activity-link").innerText = data.link;
       /* Progress bar calc*/
       // document.getElementsByClassName("progress-bar").style.width = data.accessibility * 100 + "%"
 
