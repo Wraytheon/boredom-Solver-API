@@ -1,3 +1,4 @@
 # To Do
 
-- [] Styling
+- [ ] Styling
+- [ ] If conditional for link property

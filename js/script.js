@@ -52,8 +52,13 @@ function getFetch() {
         document.getElementById("activity-link").innerText = data.link;
       }
 
-      /* Progress bar calc*/
-      // document.getElementsByClassName("progress-bar").style.width = data.accessibility * 100 + "%"
+      /* Accessibility bar calc*/
+      document.getElementById("accessibility-bar").style.width = 100 - (data.accessibility * 100) + "%"
+
+      /* Price bar calc*/
+      document.getElementById("price-bar").style.width = data.price * 100 + "%"
+
+
     })
     .catch((err) => {
       console.log(`error ${err}`);
