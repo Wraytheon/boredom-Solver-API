@@ -1,5 +1,21 @@
-const url = "https://www.boredapi.com/api/activity";
-document.getElementById("submit").addEventListener("click", getFetch);
+const baseUrl = "https://www.boredapi.com/api/activity";
+document.getElementById("submit").addEventListener("click", selectType);
+
+function selectType() {
+  const selectedTypeEl = document.getElementById("type");
+  const selectedIndex = selectedTypeEl.selectedIndex;
+  console.log(selectedIndex);
+  if (selectedIndex !== 0) {
+    // const typeResult = selectedTypeEl.options[selectedTypeEl.selectedIndex].text;
+    const typeValue = selectedTypeEl.options[selectedTypeEl.selectedIndex].value;
+    console.log(typeValue);
+    // document.querySelector("input").textContent = typeValue;
+    url = `${baseUrl}?type=${typeValue}`
+  } else {
+    url = baseUrl
+  }
+  getFetch()
+}
 
 function getFetch() {
   const searchInput = document.querySelector("input").value;
@@ -8,26 +24,22 @@ function getFetch() {
     /*Gets query value from date input*/
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      console.log(data);
+      console.log(data)
+      console.log(`url: ${url}`)
 
-      // const typeSelected = document.getElementById("type")
-      // function selectType {
-      //   const typeValue = typeSelected.options[typeSelected.selectedIndex].value
-      //   const typeResult = typeSelected.options[typeSelected.selectedIndex].text
-      //   document.querySelector('input').textContent = typeValue
-
-      // }
       document.getElementById("activity-name").innerText = data.activity;
       document.getElementById("activity-type").innerText = data.type;
       document.getElementById("activity-participants").innerText =
         data.participants;
       document.getElementById("activity-price").innerText = data.price;
-      document.getElementById("activity-accessibility").innerText = data.accessibility;
-      const linkElement = document.querySelector(".link-el")
-      if(data.link === "") {
-        linkElement.classList.add("hide")
+      document.getElementById("activity-accessibility").innerText =
+        data.accessibility;
+
+      const linkElement = document.querySelector(".link-el");
+      if (data.link === "") {
+        linkElement.classList.add("hide");
       } else {
-        linkElement.classList.remove("hide")
+        linkElement.classList.remove("hide");
         document.getElementById("activity-link").innerText = data.link;
       }
 
