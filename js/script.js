@@ -27,7 +27,7 @@ function selectType() {
 }
 
 function getFetch() {
-  const searchInput = document.querySelector("input").value;
+  // const searchInput = document.querySelector("input").value;
 
   fetch(url)
     /*Gets query value from date input*/
