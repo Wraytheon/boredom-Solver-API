@@ -20,24 +20,26 @@
     <link href="#" rel="stylesheet" />
     <!--* Normalize-->
     <link rel="stylesheet" href="css/normalize.css" />
+    <!--*-Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
     <!--CSS-->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <!--*Body-->
   <body>
-    <div class="body-wrap">
+    <div class="container">
       <main>
         <h1>Boredom Antidote Generator</h1>
         <p>
-          Feeling bored? Enter a search or use the dropdown menu to search by
-          filters.
+          Feeling bored? Enter a search or use the dropdown menu to search by filters.
         </p>
 
-        <div class="input-container">
-          <input type="text" />
-          <button id="submit" type="submit">Cure My Boredom</button>
-          <label for="type">Type</label>
-          <select name="type" id="type">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" />
+          <button id="submit" type="button" class="btn btn-primary">Cure My Boredom</button>
+          <label for="type" class="input-group-text">Type</label>
+          <select name="type" id="type" class="form-select">
             <option value="Default-type">Type of Activity</option>
             <option value="education">Education</option>
             <option value="recreational">Recreational</option>
@@ -59,7 +61,7 @@
             Price:
             <span id="activity-price">
               <div class="progress">
-                <div id="price-bar" class="progress-bar"></div>
+                <div id="price-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1"></div>
               </div>
             </span>
           </p>
@@ -67,20 +69,19 @@
             Accessibility:
             <span id="activity-accessibility">
               <div class="progress">
-                <div id="accessibility-bar" class="progress-bar"></div>
+                <div id="accessibility-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1"></div>
               </div>
             </span>
           </p>
           <p class="link-el">Link: <a href="" id="activity-link"></a></p>
         </div>
-        <!-- <div class="progress">
-            <div class="progress-bar">
-            </div>
-          </div> -->
       </main>
     </div>
 
+
     <!--* JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
