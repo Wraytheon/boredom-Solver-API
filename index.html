@@ -36,11 +36,10 @@
         </p>
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control">
-          <button id="submit" type="button" class="btn btn-primary">Cure My Boredom</button>
-          <label for="type" class="input-group-text">Type</label>
-          <select name="type" id="type" class="form-select">
-            <option value="Default-type">Type of Activity</option>
+          <!-- <input type="text" class="form-control"> -->
+          <label for="type" class="input-group-text">Sort by category</label>
+          <select name="type" id="type" class="form-select" aria-label="Default select example">
+            <option value="Default-type" selected disabled>Type of Activity</option>
             <option value="education">Education</option>
             <option value="recreational">Recreational</option>
             <option value="social">Social</option>
@@ -51,6 +50,7 @@
             <option value="music">Music</option>
             <option value="busywork">Busywork</option>
           </select>
+          <button id="submit" type="button" class="btn btn-primary">Cure My Boredom</button>
         </div>
 
         <div class="result-container">
