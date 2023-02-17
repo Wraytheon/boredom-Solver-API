@@ -58,6 +58,8 @@ function getFetch() {
       /* Price bar calc*/
       document.getElementById("price-bar").style.width = data.price * 100 + "%"
 
+      const resultEl = document.querySelector(".result-container")
+      resultEl.classList.remove("hide")
 
     })
     .catch((err) => {
