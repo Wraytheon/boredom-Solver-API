@@ -62,10 +62,38 @@ h1, main > p:first-of-type {
 /* main > * {
     text-align: center;
   } */
-
+/* .result-container {
+  display: flex;
+}
+.results {
+  width: 50%;
+} 
+.activity-name-container {
+  text-align: center;
+  width: 70%;
+}*/
+.activity-name {
+  text-align: center;
+}
 #activity-name {
   font-size: 3rem;
 }
+.activity-category {
+  text-align: center;
+}
+.results {
+  /* display: flex; */
+  text-align: center;
+  font-size: 2rem;
+}
+/* .activity-category, .activity-participants {
+  text-align: left;
+}
+.activity-price, .activity-accessibility {
+  text-align: right;
+} */
+
+
 .hide {
   display: none;
 }
@@ -84,7 +112,7 @@ h1, main > p:first-of-type {
 /**=== Main Styles ===*/
 .progress {
   width: 30%;
-  /* margin: 10px auto; */
+  margin: 0 auto;
   margin-bottom: 25px;
   border-radius: 5px;
   height: 15px;
