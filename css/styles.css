@@ -93,7 +93,9 @@ h1, main > p:first-of-type {
   text-align: right;
 } */
 
-
+.activity-link {
+  font-size: 3vw;
+}
 .hide {
   display: none;
 }
