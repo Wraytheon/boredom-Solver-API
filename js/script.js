@@ -37,7 +37,9 @@ function getFetch() {
       console.log(`url: ${url}`)
 
       document.getElementById("activity-name").innerText = data.activity;
-      document.getElementById("activity-type").innerText = data.type;
+
+      const activityType = data.type
+      document.getElementById("activity-type").innerText = activityType.charAt(0).toUpperCase() + activityType.slice(1);
       document.getElementById("activity-participants").innerText =
         data.participants;
       // document.getElementById("activity-price").innerText = data.price;
