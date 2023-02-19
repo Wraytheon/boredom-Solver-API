@@ -84,7 +84,7 @@ h1, main > p:first-of-type {
 /**=== Main Styles ===*/
 .progress {
   width: 30%;
-  margin: 10px auto;
+  /* margin: 10px auto; */
   margin-bottom: 25px;
   border-radius: 5px;
   height: 15px;

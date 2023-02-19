@@ -40,9 +40,9 @@ function getFetch() {
       document.getElementById("activity-type").innerText = data.type;
       document.getElementById("activity-participants").innerText =
         data.participants;
-      document.getElementById("activity-price").innerText = data.price;
-      document.getElementById("activity-accessibility").innerText =
-        data.accessibility;
+      // document.getElementById("activity-price").innerText = data.price;
+      // document.getElementById("activity-accessibility").innerText =
+      //   data.accessibility;
 
       const linkElement = document.querySelector(".link-el");
       if (data.link === "") {
