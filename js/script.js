@@ -1,6 +1,9 @@
+/* Api request url*/
 const baseUrl = "https://www.boredapi.com/api/activity";
+
+/*Run program if user presses submit button or hits Enter key*/
 document.getElementById("submit").addEventListener("click", selectType);
-window.addEventListener("keypress", function(event) {
+window.addEventListener("keypress", function (event) {
   // If the user presses the "Enter" key on the keyboard
   if (event.key === "Enter") {
     // Cancel the default action, if needed
@@ -10,42 +13,41 @@ window.addEventListener("keypress", function(event) {
   }
 });
 
+/*Get value of selected input from dropdown to display correct categorical results*/
 function selectType() {
   const selectedTypeEl = document.getElementById("type");
   const selectedIndex = selectedTypeEl.selectedIndex;
   console.log(selectedIndex);
+  /*If the selected dropdown option is not "Random" (the first index) get the value of the selected option and displays corresponding results*/
   if (selectedIndex !== 0) {
-    // const typeResult = selectedTypeEl.options[selectedTypeEl.selectedIndex].text;
-    const typeValue = selectedTypeEl.options[selectedTypeEl.selectedIndex].value;
-    console.log(typeValue);
-    // document.querySelector("input").textContent = typeValue;
-    url = `${baseUrl}?type=${typeValue}`
+    const typeValue =
+      selectedTypeEl.options[selectedTypeEl.selectedIndex].value;
+    url = `${baseUrl}?type=${typeValue}`;
+    /*If selected option from dropdown is "Random", set url to api that retrieves random data each time*/
   } else {
-    url = baseUrl
+    url = baseUrl;
   }
-  getFetch()
+  getFetch();
 }
 
 function getFetch() {
-  // const searchInput = document.querySelector("input").value;
-
   fetch(url)
     /*Gets query value from date input*/
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      console.log(data)
-      console.log(`url: ${url}`)
+      console.log(data);
 
+      /*Display activity name*/
       document.getElementById("activity-name").innerText = data.activity;
 
-      const activityType = data.type
-      document.getElementById("activity-type").innerText = activityType.charAt(0).toUpperCase() + activityType.slice(1);
+      /*Capitalize first letter for activity name then display it */
+      const activityType = data.type;
+      document.getElementById("activity-type").innerText =
+        activityType.charAt(0).toUpperCase() + activityType.slice(1);
       document.getElementById("activity-participants").innerText =
         data.participants;
-      // document.getElementById("activity-price").innerText = data.price;
-      // document.getElementById("activity-accessibility").innerText =
-      //   data.accessibility;
 
+      /*Only show link element if link is received from API data*/
       const linkElement = document.querySelector(".link-el");
       if (data.link === "") {
         linkElement.classList.add("hide");
@@ -55,14 +57,15 @@ function getFetch() {
       }
 
       /* Accessibility bar calc*/
-      document.getElementById("accessibility-bar").style.width = 100 - (data.accessibility * 100) + "%"
+      document.getElementById("accessibility-bar").style.width =
+        100 - data.accessibility * 100 + "%";
 
       /* Price bar calc*/
-      document.getElementById("price-bar").style.width = data.price * 100 + "%"
+      document.getElementById("price-bar").style.width = data.price * 100 + "%";
 
-      const resultEl = document.querySelector(".result-container")
-      resultEl.classList.remove("hide")
-
+      /*Display result container*/
+      const resultEl = document.querySelector(".result-container");
+      resultEl.classList.remove("hide");
     })
     .catch((err) => {
       console.log(`error ${err}`);
