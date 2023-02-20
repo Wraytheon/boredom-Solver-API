@@ -1,4 +1,6 @@
 # To Do
 
 - [ ] Styling
-- [ ] If conditional for link property
+  - [ ] Purple/green following scientific 'antidote' theme
+  - [ ] Add bubbles/scince animation?
+- [x] If conditional for link property
